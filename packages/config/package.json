@@ -1,0 +1,13 @@
+{
+  "name": "@eventio/config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "zod": "^4.4.3",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

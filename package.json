@@ -1,0 +1,67 @@
+{
+  "name": "eventio-monorepo",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @eventio/web --filter @eventio/api --parallel run dev",
+    "build": "pnpm --recursive run build",
+    "test": "pnpm --recursive run test",
+    "lint": "pnpm --recursive run lint",
+    "db:push": "pnpm --filter @eventio/db run db:push",
+    "db:generate": "pnpm --filter @eventio/db run db:generate",
+    "scrape:trigger": "pnpm --filter @eventio/workers run scrape:trigger",
+    "scrape:run": "pnpm --filter @eventio/workers run scrape:run",
+    "scrape:run:ci": "pnpm --filter @eventio/workers run scrape:run:ci",
+    "scrape:all": "pnpm --filter @eventio/workers run scrape:run",
+    "scrape:unstop": "pnpm --filter @eventio/workers run scrape:run unstop",
+    "scrape:devfolio": "pnpm --filter @eventio/workers run scrape:run devpost",
+    "check": "pnpm run lint && pnpm run build"
+  },
+  "dependencies": {
+    "@eventio/api": "workspace:*",
+    "@eventio/config": "workspace:*",
+    "@eventio/db": "workspace:*",
+    "@eventio/observability": "workspace:*",
+    "@eventio/queue": "workspace:*",
+    "@eventio/scraper-core": "workspace:*",
+    "@vercel/og": "^0.11.1",
+    "drizzle-orm": "^0.45.2",
+    "lucide-react": "^1.24.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vercel/node": "^5.8.24",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^10.7.0",
+    "prettier": "^3.9.5",
+    "typescript": "^7.0.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici@>=4.5.0 <5.28.5": ">=5.28.5",
+      "esbuild@<=0.24.2": ">=0.25.0",
+      "undici@<6.23.0": ">=6.23.0",
+      "fastify@<=5.7.2": ">=5.7.3",
+      "fastify@<5.7.2": ">=5.7.2",
+      "undici@<5.29.0": ">=5.29.0",
+      "minimatch@>=10.0.0 <10.2.1": ">=10.2.1",
+      "minimatch@>=10.0.0 <10.2.3": ">=10.2.3",
+      "ajv@>=7.0.0-alpha.0 <8.18.0": ">=8.18.0",
+      "undici@<6.24.0": ">=6.24.0",
+      "fastify@<=5.8.2": ">=5.8.3",
+      "smol-toml@<1.6.1": ">=1.6.1",
+      "vite@<=6.4.1": ">=6.4.2",
+      "fast-uri@<=3.1.0": ">=3.1.1",
+      "fast-uri@<=3.1.1": ">=3.1.2",
+      "protobufjs@<=7.5.7": ">=7.5.8",
+      "qs@>=6.11.1 <=6.15.1": ">=6.15.2"
+    }
+  }
+}

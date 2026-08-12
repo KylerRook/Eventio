@@ -1,0 +1,23 @@
+{
+
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "/api/v1"
+    },
+    {
+      "source": "/api/og/event/:slug",
+      "destination": "/api/og?slug=:slug"
+    },
+    {
+      "source": "/api/config",
+      "destination": "/api/config"
+    },
+    {
+      "source": "/((?!api|robots\\.txt|sitemap\\.xml|graphql|favicon\\.svg|manifest\\.json|assets).*)",
+      "destination": "/"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
